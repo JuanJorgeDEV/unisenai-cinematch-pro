@@ -1,11 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="CineMatch Pro - Sua Videoteca Pessoal">
+    <title>CineMatch Pro - Videoteca</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">CineMatch Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Cadastro</a></li>
+                <li><a href="catalogo.html" class="nav-link active">Videoteca</a></li>
+                <li><a href="https://www.imdb.com/chart/top250/" class="nav-link" target="_blank">Sugestões</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="catalog-header">
+            <div class="catalog-header-content">
+                <h1>Sua Videoteca</h1>
+                <p id="totalFilmes">Carregando filmes...</p>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">🎬</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Total de Filmes</p>
+                        <p class="stat-value" id="statFilmes">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Minutos Assistidos</p>
+                        <p class="stat-value" id="statMinutos">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Horas Assistidas</p>
+                        <p class="stat-value" id="statHoras">0h</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Duração Média</p>
+                        <p class="stat-value" id="statMedia">0 min</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <div class="filter-section">
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-box"
+                    placeholder="🔍 Buscar filme por título ou gênero..."
+                >
+                <button id="btnLimpar" class="btn-clear">Limpar Filtro</button>
+            </div>
+
+            <div id="filmsCatalog" class="films-grid">
+                <p class="empty-message">Nenhum filme cadastrado ainda. <a href="index.html">Adicione um agora!</a></p>
+            </div>
+        </section>
+
+        <aside class="actions-aside">
+            <h3>⚙️ Ações</h3>
+            <button id="btnLimparTodos" class="btn-danger">Limpar Todos os Filmes</button>
+            <p class="aside-info">Essa ação é irreversível. Tenha cuidado!</p>
+        </aside>
+    </main>
+
+    <!-- Modal para exibir trailer -->
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <iframe
+                    id="trailerFrame"
+                    width="100%"
+                    height="500"
+                    src=""
+                    title="Trailer"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 CineMatch Pro. Sua videoteca, seu estilo.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/display.js"></script>
 </body>
 </html>
