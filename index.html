@@ -1,11 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="CineMatch Pro - Gerenciador de Videoteca Pessoal">
+    <title>CineMatch Pro - Cadastro de Filmes</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">CineMatch Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Cadastro</a></li>
+                <li><a href="catalogo.html" class="nav-link">Videoteca</a></li>
+                <li><a href="https://www.imdb.com/chart/top250/" class="nav-link" target="_blank">Sugestões</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="hero-title">Adicione Seus Filmes Favoritos</h1>
+                <p class="hero-subtitle">Organize sua videoteca pessoal e acompanhe seu tempo de lazer</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="form-container">
+                <form id="filmForm" class="film-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="titulo">Título do Filme *</label>
+                            <input
+                                type="text"
+                                id="titulo"
+                                name="titulo"
+                                placeholder="Ex: A Origem"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ano">Ano de Lançamento *</label>
+                            <input
+                                type="number"
+                                id="ano"
+                                name="ano"
+                                min="1895"
+                                max="2099"
+                                placeholder="2010"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="duracao">Duração (minutos) *</label>
+                            <input
+                                type="number"
+                                id="duracao"
+                                name="duracao"
+                                min="1"
+                                placeholder="148"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="diretor">Diretor(a) *</label>
+                            <input
+                                type="text"
+                                id="diretor"
+                                name="diretor"
+                                placeholder="Ex: Christopher Nolan"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="sinopse">Sinopse *</label>
+                            <textarea
+                                id="sinopse"
+                                name="sinopse"
+                                placeholder="Descreva brevemente o filme..."
+                                rows="4"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="imagem">URL da Capa (Imagem) *</label>
+                            <input
+                                type="url"
+                                id="imagem"
+                                name="imagem"
+                                placeholder="https://example.com/capa.jpg"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="youtubeId">ID do Trailer (YouTube) *</label>
+                            <input
+                                type="text"
+                                id="youtubeId"
+                                name="youtubeId"
+                                placeholder="Ex: dQw4w9WgXcQ (parte final da URL)"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genero">Gênero *</label>
+                            <input
+                                type="text"
+                                id="genero"
+                                name="genero"
+                                placeholder="Ex: Ficção Científica, Drama"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Adicionar Filme</button>
+                </form>
+
+                <aside class="info-aside">
+                    <h3>📋 Dicas de Preenchimento</h3>
+                    <ul>
+                        <li>Para o <strong>ID do YouTube</strong>, acesse o trailer no YouTube e copie a parte após "?v=" da URL</li>
+                        <li>Use URLs de imagem diretas (terminadas em .jpg, .png, etc)</li>
+                        <li>A sinopse deve ser breve e envolvente</li>
+                        <li>Todos os campos são obrigatórios</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CineMatch Pro. Sua videoteca, seu estilo.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
